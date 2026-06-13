@@ -82,9 +82,7 @@ public:
 
 int main() {
     Solution solver;
-
     string s = "babad";
-
     string ans = solver.longestPalindrome(s);
 
     cout<<ans;
