@@ -1,4 +1,4 @@
-package Live;
+package live;
 
 import music.Playable;
 import music.string.veena;
