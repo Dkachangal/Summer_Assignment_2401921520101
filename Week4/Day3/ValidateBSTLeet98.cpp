@@ -1,14 +1,19 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+// Definition for a binary tree node.
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+};
+
+// --- Your Exact LeetCode Class ---
 class Solution {
 public:
     bool noExtraSpace(TreeNode* root, TreeNode* min, TreeNode* max) {
@@ -45,3 +50,30 @@ public:
         // return true;
     }
 };
+
+// --- Helper function to run the solution locally ---
+int main() {
+    Solution solver;
+
+    // Constructing a valid BST manually for testing:
+    //      5
+    //     / \
+    //    1   7
+    TreeNode* root = new TreeNode(5);
+    root->left = new TreeNode(1);
+    root->right = new TreeNode(7);
+
+    // Call your function
+    bool result = solver.isValidBST(root);
+
+    // Print output
+    cout << boolalpha; // Prints true/false instead of 1/0
+    cout << "Is the tree a valid BST? " << result << endl;
+
+    // Clean up memory
+    delete root->left;
+    delete root->right;
+    delete root;
+
+    return 0;
+}
